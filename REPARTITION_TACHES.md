@@ -1,5 +1,12 @@
-Amy :
+## Nathan
+- base html filling
+- managers
 
-Nathan :
+## Amy
+- database connection
+- part of GameManager
+- models with gets and set
 
-Sofiane :
+## Sofiane
+- base css filling
+- controllers
