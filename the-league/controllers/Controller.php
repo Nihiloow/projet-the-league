@@ -2,39 +2,39 @@
 
 class Controller extends AbstractController
 {
-     public function header() : void
+     public function home() : void
     {
-        $this->render("templates/partials/_header.phtml", []);       //Il faut changer le tableau la (miam le mafé)
+        $this->render("templates/partials/home.phtml", []);       //Il faut changer le tableau la (miam le mafé)
     }
 
-    public function dailyPlayers() : void
+    public function match() : void
     {
         $this->render("templates/partials/_dailyPlayers.phtml", []);
     }
 
-    public function dailyTeam() : void
+    public function matches() : void
     {
-        $this->render("templates/partials/_dailyTeam.phtml", []);
+        $this->render("templates/partials/match.phtml", []);
     }
 
-    public function dailyTeamPlayer() : void
+    public function player() : void
     {
-        $this->render("templates/partials/_dailyTeamPlayer.phtml", []);
-    }
-
-    public function lastMatch() : void
-    {
-        $this->render("templates/partials/_lastMatch.phtml", []);
+        $this->render("templates/partials/player.phtml", []);
     }
 
     public function players() : void
     {
-        $this->render("templates/partials/_players.phtml", []);
+        $this->render("templates/partials/players.phtml", []);
     }
 
-    public function title() : void
+    public function team() : void
     {
-        $this->render("templates/partials/_title.phtml", []);
+        $this->render("templates/partials/team.phtml", []);
+    }
+
+    public function teams() : void
+    {
+        $this->render("templates/partials/teams.phtml", []);
     }
 }
 

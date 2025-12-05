@@ -7,8 +7,8 @@ class PlayerManager extends AbstractManager{
         $parameters = [
             "nickname" => $player->getNickname(),
             "bio" => $player->getBio(),
-            "portrait" => $player->getPortrait(),
-            "team" => $player->getTeam(),
+            "portrait" => $player->getPortrait()->getId(),
+            "team" => $player->getTeam()->getId(),
         ];
 
         $query->execute($parameters);
@@ -21,8 +21,8 @@ class PlayerManager extends AbstractManager{
         $parameters = [
             "nickname"=> $player->getNickname(),
             "bio"=> $player->getBio(),
-            "portrait"=> $player->getPortrait(),
-            "team"=> $player->getTeam(),
+            "portrait"=> $player->getPortrait()->getId(),
+            "team"=> $player->getTeam()->getId(),
             "id"=> $player->getId()
         ];
 
