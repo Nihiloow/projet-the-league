@@ -1,6 +1,6 @@
 <?php
 class Team{
-    public function __construct(private int $id, private string $name, private string $description, private int $logo){
+    public function __construct(private int $id, private string $name, private string $description, private Media $logo){
     }
 
     public function getId(): int {
@@ -15,7 +15,7 @@ class Team{
         return $this->description;
     }
 
-    public function getLogo(): int {
+    public function getLogo(): Media {
         return $this->logo;
     }
 
@@ -31,7 +31,7 @@ class Team{
         $this->description = $description;
     }
 
-    public function setLogo(int $logo): void {
+    public function setLogo(Media $logo): void {
         $this->logo = $logo;
     }
 }

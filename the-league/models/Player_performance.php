@@ -1,17 +1,17 @@
 <?php
-class player_performance{
-    public function __construct(private int $id, private int $player, private int $game, private int $points, private int $assists){
+class Player_Performance{
+    public function __construct(private int $id, private Player $player, private Game $game, private int $points, private int $assists){
     }
 
     public function getId(): int {
         return $this->id;
     }
 
-    public function getPlayer(): int {
+    public function getPlayer(): Player {
         return $this->player;
     }
 
-    public function getGame(): int {
+    public function getGame(): Game {
         return $this->game;
     }
 
@@ -27,11 +27,11 @@ class player_performance{
         $this->id = $id;
     }
 
-    public function setPlayer(int $player): void {
+    public function setPlayer(Player $player): void {
         $this->player = $player;
     }
 
-    public function setGame(int $game): void {
+    public function setGame(Game $game): void {
         $this->game = $game;
     }
 

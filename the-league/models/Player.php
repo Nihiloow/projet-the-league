@@ -1,6 +1,6 @@
 <?php
 class Player{
-    public function __construct(private int $id, private string $nickname, private string $bio, private int $portrait, private int $team){
+    public function __construct(private string $nickname, private string $bio, private Media $portrait, private Team $team, private int $id) {
     }
 
     public function getId(): int {
@@ -15,11 +15,11 @@ class Player{
         return $this->bio;
     }
 
-    public function getPortrait(): int {
+    public function getPortrait(): Media {
         return $this->portrait;
     }
 
-    public function getTeam(): int {
+    public function getTeam(): Team {
         return $this->team;
     }
 
@@ -35,11 +35,11 @@ class Player{
         $this->bio = $bio;
     }
 
-    public function setPortrait(int $portrait): void {
+    public function setPortrait(Media $portrait): void {
         $this->portrait = $portrait;
     }
 
-    public function setTeam(int $team): void {
+    public function setTeam(team $team): void {
         $this->team = $team;
     }
 }

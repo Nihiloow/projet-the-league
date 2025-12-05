@@ -1,7 +1,6 @@
 <?php
 class Media{
-    public function __construct(private int $id, private string $url, private string $alt){
-    }
+    public function __construct(private string $url, private string $alt, private int $id) {}
 
     public function getId(): int {
         return $this->id;

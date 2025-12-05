@@ -1,4 +1,7 @@
 <?php
-class Player_performanceManager extends AbstractManager{
+class Player_PerformanceManager extends AbstractManager
+{
     
+    
+
 }
