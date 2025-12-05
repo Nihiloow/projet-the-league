@@ -1,5 +1,10 @@
 html {
     font-family: 'Roboto', sans-serif;
+    background-color: #0b132b;
+}
+
+header {
+    color: white;
 }
 
 header h1 {
@@ -8,6 +13,7 @@ header h1 {
     align-items: center;
     font-weight: bolder;
     text-align: center;
+    font-size: bolder;
 }
 
 .nav {
@@ -16,6 +22,12 @@ header h1 {
     align-items: center;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 .title {
