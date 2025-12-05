@@ -31,6 +31,18 @@ a {
 }
 
 .title {
-    background-image: url(assets/images/home_background_league.png);
+    background-image: url(../../images/home_background_league.png);
     background-size: cover;
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.title h2 {
+    font-size: 3.5rem;
+    margin-bottom: 150px;
+}
+
+.title p {
+    font-size: 2rem;
 }
