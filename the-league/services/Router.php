@@ -6,26 +6,27 @@ class Router
     {
         $ctrl = new Controller();
         $paths = [
-            "show_user" => "show",
-            "create_user" => "create",
-            "check_create_user" => "checkcreate",
-            "update_user" => "update",
-            "check_update_user" => "checkUpdate",
-            "delete_user" => "delete"
+            "match" => "match",
+            "matchs" => "matches",
+            "player" => "player",
+            "players" => "players",
+            "team" => "team",
+            "teams" => "teams"
         ];
 
         if (isset($_GET["route"])){
             if (isset($paths[$_GET["route"]])){
-                $ctrl->$paths[$_GET["route"]]();
+                $method = $paths[$_GET["route"]];
+                $ctrl->$method();
             }
 
             else{
-                $ctrl->list();
+                $ctrl->home();
             }
         }
 
         else{
-            $ctrl->list();
+            $ctrl->home();
         }
     }
 }
