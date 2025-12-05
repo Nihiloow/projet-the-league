@@ -8,7 +8,7 @@ class TeamManager extends AbstractManager
         $parameters = [
             "name"=> $team->getName(),
             "description"=> $team->getDescription(),
-            "logo"=> $team->getLogo(),
+            "logo"=> $team->getLogo()->getId(),
         ];
 
         $query->execute($parameters);
@@ -21,7 +21,7 @@ class TeamManager extends AbstractManager
         $parameters = [
             "name"=> $team->getName(),
             "description"=> $team->getDescription(),
-            "logo"=> $team->getLogo(),
+            "logo"=> $team->getLogo()->getId(),
             "id"=> $team->getId()
         ];
 

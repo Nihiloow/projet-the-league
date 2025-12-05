@@ -6,8 +6,8 @@ class GameManager extends AbstractManager{
         $parameters = [
             "name" => $game->getName(),
             "date" => $game->getdate()->format('Y-m-d H:i:s'),
-            "team_1" => $game->getTeam1(),
-            "team_2" => $game->getTeam2(),
+            "team_1" => $game->getTeam1()->getId(),
+            "team_2" => $game->getTeam2()->getId(),
             "winner" => $game->getWinner(),
         ];
 
@@ -21,9 +21,9 @@ class GameManager extends AbstractManager{
         $parameters = [
             "name"=> $game->getName(),
             "date"=> $game->getDate()->format("Y-m-d H:i:s"),
-            "team_1"=> $game->getTeam1(),
-            "team_2"=> $game->getTeam2(),
-            "winner"=> $game->getWinner(),
+            "team_1"=> $game->getTeam1()->getId(),
+            "team_2"=> $game->getTeam2()->getId(),
+            "winner"=> $game->getWinner()->getId(),
             "id"=> $game->getId()
         ];
 
@@ -53,7 +53,7 @@ class GameManager extends AbstractManager{
 
         if (isset($result))
         {
-            return new Game($result["name"], new DateTime($result["date"]), $result["team_1"], $result["team_2"], $result["winner"], $result["id"]);
+            return new Game($result["name"], new DateTime($result["date"]), $result["team_1"], $result["team_2"], $result["winner"]->getId(), $result["id"]);
         }
 
         else
@@ -71,7 +71,7 @@ class GameManager extends AbstractManager{
 
         foreach ($result as $game)
         {
-            $tab[] = new Game($game["name"], new DateTime($game["date"]), $game["team_1"], $game["team_2"], $game["winner"], $game["id"]);
+            $tab[] = new Game($game["name"], new DateTime($game["date"]), $game["team_1"], $game["team_2"], $game["winner"]->getId(), $game["id"]);
         }
 
         return $tab;
