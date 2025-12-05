@@ -1,6 +1,7 @@
 <?php
 class GameManager extends AbstractManager{
-    public function create(Game $game) : User{
+    public function create(Game $game) : Game
+    {
         $query = $this->db->prepare("INSERT INTO games(name, date, team_1, team_2, winner) VALUES(:name, :date, :team_1, :team_2, :winner);");
         $parameters = [
             "name" => $game->getName(),
