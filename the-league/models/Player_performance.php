@@ -1,7 +1,6 @@
 <?php
 class Player_Performance{
-    public function __construct(private int $id, private Player $player, private Game $game, private int $points, private int $assists){
-    }
+    public function __construct(private Player $player, private Game $game, private int $points, private int $assists, private int $id) {}
 
     public function getId(): int {
         return $this->id;

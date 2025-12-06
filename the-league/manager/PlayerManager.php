@@ -1,9 +1,10 @@
 <?php
 
-class PlayerManager extends AbstractManager{
+class PlayerManager extends AbstractManager
+{
     public function create(Player $player) : Player
     {
-        $query = $this->db->prepare("INSERT INTO players(nickname, bio, portrait, team, ) VALUES(:nickname, :bio, :portrait, :team);");
+        $query = $this->db->prepare("INSERT INTO players(nickname, bio, portrait, team) VALUES(:nickname, :bio, :portrait, :team);");
         $parameters = [
             "nickname" => $player->getNickname(),
             "bio" => $player->getBio(),
@@ -17,7 +18,7 @@ class PlayerManager extends AbstractManager{
 
     public function update(Player $player): Player
     {
-        $query = $this->db->prepare("UPDATE players SET nickname = :nickname, bio = :bio, portrait = :portrait, team = :team = : WHERE id = :id");
+        $query = $this->db->prepare("UPDATE players SET nickname = :nickname, bio = :bio, portrait = :portrait, team = :team WHERE id = :id");
         $parameters = [
             "nickname"=> $player->getNickname(),
             "bio"=> $player->getBio(),
@@ -42,7 +43,7 @@ class PlayerManager extends AbstractManager{
 
     public function findOne(int $id): ?Player
     {
-        $query = $this->db->prepare("SELECT * FROM players WHERE id = :id");
+        $query = $this->db->prepare("SELECT p.id AS playerId, p.nickname, p.bio, p.team, m.id AS portraitId, m.url AS portraitUrl, m.alt AS portraitAlt, t.id AS teamId, t.name AS teamName, t.description AS teamDesc, t.logo AS teamLogoId, ml.url AS logoUrl, ml.alt AS logoAlt FROM players AS p JOIN media AS m ON p.portrait = m.id JOIN teams AS t ON p.team = t.id JOIN media AS ml ON t.logo = ml.id WHERE p.id = :id;");
         $parameters = [
             "id"=> $id,
         ];
@@ -51,8 +52,14 @@ class PlayerManager extends AbstractManager{
         $result = $query->fetch(\PDO::FETCH_ASSOC);
 
         if (isset($result))
-        {
-            return new Player($result["nickname"], $result["bio"], $result["portrait"], $result["team"], $result["id"]);
+        {            
+            $teamLogo = new Media($result["logoUrl"], $result["logoAlt"], $result["teamLogoId"]);
+            
+            $team = new Team($result["teamName"], $result["teamDesc"], $teamLogo, $result["teamId"]);
+            
+            $portrait = new Media($result["portraitUrl"], $result["portraitAlt"], $result["portraitId"]);
+            
+            return new Player($result["nickname"], $result["bio"], $portrait, $team, $result["playerId"]);
         }
 
         else
@@ -63,14 +70,20 @@ class PlayerManager extends AbstractManager{
 
     public function findAll(): array
     {
-        $query = $this->db->prepare("SELECT * FROM players");
+        $query = $this->db->prepare("SELECT p.id AS playerId, p.nickname, p.bio, p.team, m.id AS portraitId, m.url AS portraitUrl, m.alt AS portraitAlt, t.id AS teamId, t.name AS teamName, t.description AS teamDesc, t.logo AS teamLogoId, ml.url AS logoUrl, ml.alt AS logoAlt FROM players AS p JOIN media AS m ON p.portrait = m.id JOIN teams AS t ON p.team = t.id JOIN media AS ml ON t.logo = ml.id;");
         $query->execute();
-        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+        $results = $query->fetchAll(\PDO::FETCH_ASSOC);
         $tab = [];
 
-        foreach ($result as $player)
-        {
-            $tab[] = new Player($player["nickname"], $player["bio"], $player["portrait"], $player["team"], $player["id"]);
+        foreach ($results as $playerData)
+        {            
+            $teamLogo = new Media($playerData["logoUrl"], $playerData["logoAlt"], $playerData["teamLogoId"]);
+            
+            $team = new Team($playerData["teamName"], $playerData["teamDesc"], $teamLogo, $playerData["teamId"]);
+            
+            $portrait = new Media($playerData["portraitUrl"], $playerData["portraitAlt"], $playerData["portraitId"]);
+            
+            $tab[] = new Player($playerData["nickname"], $playerData["bio"], $portrait, $team, $playerData["playerId"]);
         }
 
         return $tab;
