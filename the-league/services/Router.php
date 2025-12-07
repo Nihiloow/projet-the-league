@@ -21,7 +21,7 @@ class Router
             }
 
             else{
-                $ctrl->home();
+                $ctrl->missing();
             }
         }
 

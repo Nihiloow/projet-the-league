@@ -34,8 +34,12 @@ class Controller extends AbstractController
 
     public function teams() : void
     {
-        echo "tralala";
         $this->render("templates/teams.phtml", []);
+    }
+
+    public function missing() : void
+    {
+        $this->render("templates/404.phtml", []);
     }
 }
 
