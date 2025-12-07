@@ -4,17 +4,19 @@
 
    <div>
 
-        <h4>... vs ...</h4>
+   <?php $game = $gameManager->findOne(3); ?>
 
-        <p>Date</p>
+        <h4><?= $game->getName()?></h4>
+
+        <p><?= $game->getDate()->format('Y-m-d H:i:s')?></p>
 
         <div>
             <div>
-                <img src="assets/images/placeholder.png" alt="winner">
+                <img src=<?= $game->getTeam1()->getLogo()->getUrl()?> alt="<?= $game->getTeam1()->getLogo()->getAlt()?>">
             </div>
             
             <div>
-                <img src="assets/images/placeholder.png" alt="loser">
+                <img src=<?= $game->getTeam2()->getLogo()->getUrl()?> alt="<?= $game->getTeam2()->getLogo()->getAlt()?>">
             </div>
         </div>
 

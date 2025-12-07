@@ -2,24 +2,32 @@
 
     <h3>LA TEAM À LA UNE</h3>
 
+    <?php $team = $teamManager->findOne(1); ?>
+    <?php $players = $playerManager->findAll(); ?>
+
     <div>
-        <img src="assets/images/placeholder.png" alt="$team->getLogo()->getAlt()">
+        <img src=<?= $team->getLogo()->getUrl()?> alt="<?= $team->getLogo()->getAlt()?>">
 
         <div>
 
-            <h4>placeholder</h4>
+            <h4><?= $team->getName()?></h4>
             
             <p>Les players</p>
             
-            <!-- ?php foreach ($team->get as ){ ?> -->
-                <div>
-                    
-                    <img src="assets/images/placeholder.png" alt="Photo de profil de ...">
-                    
-                    <p>placeholder</p>
-                    
-                </div>
-            <!-- ?php } ?> -->
+            <?php foreach ($players as $player) { ?>
+                <?php if ($player->getTeam()->getId() === $team->getId()) { ?>
+
+                    <div>
+                        
+                        <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
+                        
+                        <p><?= $player->getNickname()?></p>
+                        
+                    </div>
+
+                <?php } ?>
+            <?php } ?>
+
         </div>
     </div>
 

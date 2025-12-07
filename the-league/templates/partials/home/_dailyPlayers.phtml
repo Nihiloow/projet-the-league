@@ -3,15 +3,23 @@
     <h2>LES PLAYERS À LA UNE</h2>
 
     <div>
-        <!-- ?php foreach (){ ?> -->
-            <div>
 
-                <img src="assets/images/placeholder.png" alt="Photo de profil de ...">
-                <h4>JOUEUR</h4>
-                <h5>...</h5>
+        <?php $tab = [$playerManager->findOne(3), $playerManager->findOne(14), $playerManager->findOne(12)]; ?>
+
+        <?php foreach ($tab as $player) { ?>
+
+            <div>
+                
+                <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
+                
+                <h4><?= $player->getNickname()?></h4>
+                
+                <h5><?= $player->getBio()?></h5>
 
             </div>
-        <!-- ?php } ?> -->
+        
+        <?php } ?>
+
     </div>
 
 </section>
