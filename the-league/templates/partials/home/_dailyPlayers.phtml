@@ -1,6 +1,6 @@
-<section class="player_une">
+<section class="flex_column pink">
 
-    <h2>LES PLAYERS À LA UNE</h2>
+    <h3>LES PLAYERS À LA UNE</h3>
 
     <div class="liste_joueur_une">
 
@@ -8,13 +8,13 @@
 
         <?php foreach ($tab as $player) { ?>
 
-            <div class="joueur_une">
+            <div class="flex_column joueur_une border">
                 
                 <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
                 
                 <h4><?= $player->getNickname()?></h4>
                 
-                <h5><?= $player->getTeam()->getName() ?></h5>
+                <h5 class="yellow"><?= $player->getTeam()->getName() ?></h5>
 
             </div>
         

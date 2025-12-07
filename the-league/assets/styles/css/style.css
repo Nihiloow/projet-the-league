@@ -9,18 +9,31 @@ body{
     margin: 0px;
 }
 
+h3{
+  font-family: Ubuntu;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.yellow{
+  color: #d4b52f;
+}
+
+.pink{
+  color: #d97ab5;
+}
+
+.blue{
+  color: #45a0ec;
+}
+
 .flex_column{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.flex_column h3 {
-    color: #d4b52f;
-    text-decoration: underline;
-    text-underline-offset: 8px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
 }
 
 h1 {
@@ -120,13 +133,38 @@ a {
   font-weight: 500;
 }
 
-.LES_MATCHS {
-    text-align: center;
-    color: #45a0ec;
+.liste_joueur_une {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-.LES_MATCHS h2 {
-    font-size: 1.8vw;
+.joueur_une {
+    padding: 20px;
+    width: 300px;
+}
+
+.joueur_une img{
+  width: 100%;
+}
+
+.joueur_une h4{
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.joueur_une h5{
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.last_match div{
+  border: solid 1px #1c2541;
 }
 
 .matchs {
@@ -135,27 +173,4 @@ a {
 
 .matchs h3 {
     font-size: 1.4vw;
-}
-
-
-.player_une{
-    
-}
-
-.player_une h2 {
-
-}
-
-.liste_joueur_une {
-    
-}
-
-.joueur_une {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.joueur_une img {
-    width: 30%;
 }
