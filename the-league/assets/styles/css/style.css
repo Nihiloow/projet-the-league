@@ -115,7 +115,7 @@ a {
 
 .players-grid {
   display: flex;
-  gap: 20%;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
