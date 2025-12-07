@@ -4,11 +4,19 @@
 
     <div>
 
-        <?php // foreach () {
+        <?php $players = $playerManager->findAll();
+        foreach ($players as $teamMate){
+            if ($player->getTeam()->getId() === $teamMate->getTeam()->getId() && $player->getId() !== $teamMate->getId()){
+                $playerName = $teamMate->getNickname();
+                $imageInfo = $teamMate->getPortrait();?>
 
-            require "templates/partials/player/_profil.phtml" // à modif
-
-        // } ?>
+                <div>
+                    <img src="<?= $imageInfo->getUrl() ?>" alt="<?= $imageInfo->getAlt() ?>">
+                    <h3><?= $playerName ?></h3>
+                    <a href="index.php?route=player&id=<?= $teamMate->getId() ?>">Découvrez <?= $playerName ?></a>
+                </div>
+            <?php } ?>
+        <?php } ?>
 
     </div>
 

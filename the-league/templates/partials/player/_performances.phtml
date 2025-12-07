@@ -7,17 +7,15 @@
     <?php // La personne qui fait le css dispose comme elle veut !
     // Voici un exemple de ligne du tableau performance : ?>
 
-    <?php $perfs = $player_perfManager->findPerf($_GET()); ?>
+    <?php $perfs = $player_perfManager->findPerfPlayer($data["id"]);?>
 
     <?php foreach ($perfs as $perf) { ?>
 
         <div>
-
-            <p><?=$perf->getPlayer()->getNickname() ?></p>
-            <p><?=$perf->getTeam()->getName() ?></p>
-            <p><?=$perf->getPoints() ?></p>
-            <p><?=$perf->getAssists() ?></p>
-
+            <p><?=$perf["team_adverse"] ?></p>
+            <p><?=$perf["points"] ?></p>
+            <p><?=$perf["assists"] ?></p>
+            <p><?=$perf["victoire"] ?></p>
         </div>
 
     <?php } ?>

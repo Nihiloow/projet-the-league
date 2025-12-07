@@ -1,7 +1,10 @@
 <div>
 
-    <h2>Pseudo</h2>
+    <?php $player = $playerManager->findOne($data["id"]); 
+    $imageInfo = $player->getPortrait();?>
+    
+    <h2><?= $player->getNickname() ?></h2>
 
-    <img src="" alt="Photo de profil de ...">
+    <img src="<?= $imageInfo->getUrl() ?>" alt="<?= $imageInfo->getAlt() ?>">
 
 </div>

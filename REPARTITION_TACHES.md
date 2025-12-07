@@ -7,10 +7,13 @@
 
 ## Amy
 - AbstractManager + part of GameManager
-- models with gets and set
-- part of main page html
+- models
+- part of main page html + a bit of css 
+- data on all pages
 
 ## Sofiane
 - base css filling
-- controllers
+- base controllers
 - part of router
+- partials
+- css finish up
