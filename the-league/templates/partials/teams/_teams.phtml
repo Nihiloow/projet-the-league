@@ -4,9 +4,24 @@
 
     <div>
 
-        <?php // foreach () { 
-            require "templates/partials/_profil.phtml"
-        // } ?>
+        <?php $data = $teamManager->findAll();
+        foreach ($data as $team){
+            $teamName = $team->getName();
+            $imageInfo = $team->getLogo();?>
+        <div>
+            <img src="<?= $imageInfo->getUrl() ?>" alt="<?= $imageInfo->getAlt() ?>">
+            <h3><?= $teamName ?></h3>
+
+            <h4><?php if ($teamName === "Sparrow"){
+                echo "The spies from the east";
+            }else if ($teamName === "Vendetta"){
+                echo "A knack for revenge";
+            }else{
+                echo "A team of " . $teamName;}?></h4>
+                
+            <a href="index.php?route=team">Découvrez <?= $teamName ?></a>
+        </div>
+        <?php } ?>
 
     </div>
 
