@@ -129,4 +129,56 @@ class Player_PerformanceManager extends AbstractManager
 
         return $tab;
     }
+
+    public function findPerfPlayer(int $playerId): array
+    {
+        $query = $this->db->prepare("
+            SELECT pp.points, pp.assists, g.id AS gameId, g.date AS gameDate, g.team_1 AS team1Id, g.team_2 AS team2Id, g.winner AS winnerId, t_player.id AS playerTeamId, t1.name AS team1Name, t2.name AS team2Name
+            FROM player_performance AS pp
+            JOIN players AS p ON pp.player = p.id
+            JOIN teams AS t_player ON p.team = t_player.id
+            JOIN games AS g ON pp.game = g.id
+            JOIN teams AS t1 ON g.team_1 = t1.id
+            JOIN teams AS t2 ON g.team_2 = t2.id
+            WHERE pp.player = :playerId
+            ORDER BY g.date DESC;
+        ");
+
+        $query->execute(["playerId" => $playerId]);
+        
+        $results = $query->fetchAll(\PDO::FETCH_ASSOC);
+        $performances = [];
+
+        foreach ($results as $result) {
+            
+            $playerTeamId = $result['playerTeamId'];
+
+            if ($result['winnerId'] == $playerTeamId) {
+                $victoire = "Oui";
+            }
+
+            else {
+                $victoire = "Non";
+            }
+
+            if ($result['team1Id'] == $playerTeamId) {
+                $adverseTeamName = $result['team2Name'];
+            } 
+            
+            else {
+                $adverseTeamName = $result['team1Name'];
+            }
+
+            $performances[] = [
+                "game_id" => $result['gameId'],
+                "game_date" => new DateTime($result['gameDate']),
+                "team_adverse" => $adverseTeamName,
+                "points" => $result['points'],
+                "assists" => $result['assists'],
+                "victoire" => $victoire,
+            ];
+        }
+
+        return $performances;
+    }
 }
