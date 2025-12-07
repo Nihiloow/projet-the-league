@@ -57,14 +57,14 @@
     font-size: 1.5rem;
 }
 
-section > div {
+.section_performance > div {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
 }
 
-section h2 {
+.section_performance h2 {
     color: #b565d8;
     text-align: center;
     font-size: 2.5rem;
@@ -94,7 +94,7 @@ section h2 {
     letter-spacing: 1px;
 }
 
-section > div > div:not(.nom_categorie) {
+.section_performance > div > div:not(.nom_categorie) {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr 1fr;
     gap: 2rem;
@@ -103,27 +103,27 @@ section > div > div:not(.nom_categorie) {
     transition: background-color 0.3s ease;
 }
 
-section > div > div:not(.nom_categorie):hover {
+.section_performance > div > div:not(.nom_categorie):hover {
     background-color: rgba(255, 255, 255, 0.03);
 }
 
-section > div > div:not(.nom_categorie) p {
+.section_performance > div > div:not(.nom_categorie) p {
     margin: 0;
     font-size: 1.1rem;
 }
 
-section > div > div:not(.nom_categorie) p:first-child {
+.section_performance > div > div:not(.nom_categorie) p:first-child {
     color: #d97ab5;
     font-weight: 500;
 }
 
-section > div > div:not(.nom_categorie) p:nth-child(2) {
+.section_performance > div > div:not(.nom_categorie) p:nth-child(2) {
     color: #d4b52f;
     font-weight: 500;
 }
 
-section > div > div:not(.nom_categorie) p:nth-child(3),
-section > div > div:not(.nom_categorie) p:nth-child(4) {
+.section_performance > div > div:not(.nom_categorie) p:nth-child(3),
+.section_performance > div > div:not(.nom_categorie) p:nth-child(4) {
     color: white;
     text-align: center;
 }
