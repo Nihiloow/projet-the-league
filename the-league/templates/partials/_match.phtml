@@ -1,0 +1,19 @@
+<div>
+
+<?php $game = $gameManager->findOne($id_game); ?>
+
+    <h4><?= $game->getName()?></h4>
+
+    <p><?= $game->getDate()->format('Y-m-d H:i:s')?></p>
+
+    <div>
+        <div>
+            <img src=<?= $game->getTeam1()->getLogo()->getUrl()?> alt="<?= $game->getTeam1()->getLogo()->getAlt()?>">
+        </div>
+        
+        <div>
+            <img src=<?= $game->getTeam2()->getLogo()->getUrl()?> alt="<?= $game->getTeam2()->getLogo()->getAlt()?>">
+        </div>
+    </div>
+
+</div>

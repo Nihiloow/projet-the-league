@@ -1,7 +1,11 @@
-<?php 
+<section>
 
-require "templates/partials/matchs/_vandetta_owls.phtml";
-require "templates/partials/matchs/_panthers_sparrow.phtml";
-require "templates/partials/matchs/_owls_parrots.phtml";
+    <h2>Les Matchs</h2>
 
-?>
+    <?php for ($i = 1; $i < 4; $i++) { ?>
+        <?php $id_game = $i; ?>
+        <?php require "templates/partials/_matchs.phtml"; ?>
+        <a href="lien de la page du match">DÉTAIL DU MATCH</a>
+    <?php } ?>
+
+</section>
