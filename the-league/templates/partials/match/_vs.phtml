@@ -1,6 +1,6 @@
 <div>
 
-<?php $game = $gameManager->findOne($_GET()); // à remplir avec le paramètre que renvoie la page matches ?>
+<?php $game = $gameManager->findOne($data["id"]); ?>
 
     <div>
         <img src=<?= $game->getTeam1()->getLogo()->getUrl()?> alt="<?= $game->getTeam1()->getLogo()->getAlt()?>">
