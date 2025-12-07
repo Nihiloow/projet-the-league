@@ -1,6 +1,6 @@
 <section>
     
-    <?php $game = $gameManager->findOne($_GET()); // à remplir avec le paramètre que renvoie la page matches ?>
+    <?php $game = $gameManager->findOne($data["id"]); ?>
 
     <h2><?= $game->getName()?></h2>
 
