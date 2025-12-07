@@ -12,7 +12,7 @@ abstract class AbstractManager
         $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
 
         $user = "root";
-        $password = "demopma";  //mdp avant de commit : demopma (QUE POUR SOFIANE)
+        $password = "demopma";
 
         $this->db = new PDO(
             $connexionString,
