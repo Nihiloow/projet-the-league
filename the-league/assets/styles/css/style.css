@@ -141,3 +141,26 @@ a {
 .matchs h3 {
     font-size: 1.4vw;
 }
+
+
+.player_une {
+    
+}
+
+.player_une h2 {
+
+}
+
+.liste_joueur_une {
+    
+}
+
+.joueur_une {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.joueur_une img {
+    width: 30%;
+}

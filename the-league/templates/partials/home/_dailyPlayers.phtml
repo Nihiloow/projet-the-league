@@ -1,14 +1,14 @@
-<section>
+<section class="player_une">
 
     <h2>LES PLAYERS À LA UNE</h2>
 
-    <div>
+    <div class="liste_joueur_une">
 
         <?php $tab = [$playerManager->findOne(3), $playerManager->findOne(14), $playerManager->findOne(12)]; ?>
 
         <?php foreach ($tab as $player) { ?>
 
-            <div>
+            <div class="joueur_une">
                 
                 <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
                 
