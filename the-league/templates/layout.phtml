@@ -12,6 +12,13 @@
         <header>
             <h1><a href="index.php">THE LEAGUE</a></h1>
 
+            <?php $gameManager = new GameManager() ;
+                $mediaManager = new MediaManager() ;
+                $playerManager = new PlayerManager() ;
+                $player_perfManager = new Player_PerformanceManager() ;
+                $teamManager = new TeamManager() ;
+            ?>
+
             <div class="nav">
                 <a href="index.php?route=teams">LES TEAMS</a>
                 <a href="index.php?route=players">LES PLAYERS</a>

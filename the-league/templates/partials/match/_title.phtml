@@ -1,7 +1,9 @@
 <section>
+    
+    <?php $game = $gameManager->findOne($_GET()); // à remplir avec le paramètre que renvoie la page matches ?>
 
-    <h2>... VS ...</h2>
+    <h2><?= $game->getName()?></h2>
 
-    <h3>Date</h3>
+    <h3><?= $game->getDate()->format('Y-m-d H:i:s')?></h3>
 
 </section>
