@@ -6,28 +6,23 @@
     <?php $players = $playerManager->findAll(); ?>
 
     <div class="border">
-        <img class="dailyTeamLogo" src=<?= $team->getLogo()->getUrl()?> alt="<?= $team->getLogo()->getAlt()?>">
+        <img class="dailyTeamLogo" src="<?= $team->getLogo()->getUrl()?>" alt="<?= $team->getLogo()->getAlt()?>">
 
         <div class="joueurs">
-
             <h4><?= $team->getName()?></h4>
             
             <p>Les players</p>
             
-            <?php foreach ($players as $player) { ?>
-                <?php if ($player->getTeam()->getId() === $team->getId()) { ?>
-
-                    <div>
-                        
-                        <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
-                        
-                        <p><?= $player->getNickname()?></p>
-                        
-                    </div>
-
+            <div class="players-grid">
+                <?php foreach ($players as $player) { ?>
+                    <?php if ($player->getTeam()->getId() === $team->getId()) { ?>
+                        <div class="player-card">
+                            <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
+                            <p><?= $player->getNickname()?></p>
+                        </div>
+                    <?php } ?>
                 <?php } ?>
-            <?php } ?>
-
+            </div>
         </div>
     </div>
 
