@@ -2,6 +2,8 @@
 - base html filling
 - managers
 - finish up on models
+- finish up on managers
+- some partials
 
 ## Amy
 - AbstractManager + part of GameManager
