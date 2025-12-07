@@ -7,7 +7,7 @@ class Router
         $ctrl = new Controller();
         $paths = [
             "match" => "match",
-            "matchs" => "matches",
+            "matchs" => "matchs",
             "player" => "player",
             "players" => "players",
             "team" => "team",

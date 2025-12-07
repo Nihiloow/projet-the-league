@@ -16,6 +16,10 @@ body{
     align-items: center;
 }
 
+.border{
+    border: solid 1px #1c2541;
+}
+
 h1 {
     text-align: center;
 }
@@ -32,6 +36,8 @@ a {
     color: white;
 }
 
+/*home page*/
+
 .title {
     background-image: url(../../images/home_background_league.png);
     background-size: cover;
@@ -45,6 +51,10 @@ a {
 
 .title p{
     font-size: 2vw;
+}
+
+#dailyTeamLogo{
+    width: 250px;
 }
 
 .LES_MATCHS {

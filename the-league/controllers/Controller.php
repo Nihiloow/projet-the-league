@@ -9,12 +9,12 @@ class Controller extends AbstractController
 
     public function match() : void
     {
-        $this->render("templates/_dailyPlayers.phtml", []);
+        $this->render("templates/match.phtml", []);
     }
 
-    public function matches() : void
+    public function matchs() : void
     {
-        $this->render("templates/match.phtml", []);
+        $this->render("templates/matchs.phtml", []);
     }
 
     public function player() : void

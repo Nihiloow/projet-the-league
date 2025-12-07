@@ -1,12 +1,12 @@
-<section>
+<section class="flex_column" id="">
 
     <h3>LA TEAM À LA UNE</h3>
 
     <?php $team = $teamManager->findOne(1); ?>
     <?php $players = $playerManager->findAll(); ?>
 
-    <div>
-        <img src=<?= $team->getLogo()->getUrl()?> alt="<?= $team->getLogo()->getAlt()?>">
+    <div class="border">
+        <img id="dailyTeamLogo" src=<?= $team->getLogo()->getUrl()?> alt="<?= $team->getLogo()->getAlt()?>">
 
         <div>
 
