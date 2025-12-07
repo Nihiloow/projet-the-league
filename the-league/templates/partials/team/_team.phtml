@@ -1,12 +1,24 @@
 <div>
-
-    <h2>Nom Team</h2>
+    <?php $teamName = $teamManager->findOne($data["id"])->getName(); ?>
+    
+    <h2><?= $teamName ?></h2>
 
     <div>
 
-        <?php // foreach () { 
-            require "lien du profil.phtml"
-        // } ?>
+        <?php $players = $playerManager->findAll();
+        foreach ($players as $player){
+            if ($player->getTeam()->getId() === $data["id"]){
+                $playerName = $player->getNickname();
+                $imageInfo = $player->getPortrait();?>
+
+                <div>
+                    <img src="<?= $imageInfo->getUrl() ?>" alt="<?= $imageInfo->getAlt() ?>">
+                    <h3><?= $playerName ?></h3>
+                    <h4><?= $player->getTeam()->getName() ?></h4>
+                    <a href="index.php?route=match">Découvrez <?= $playerName ?></a>
+                </div>
+            <?php } ?>
+        <?php } ?>
 
     </div>
 

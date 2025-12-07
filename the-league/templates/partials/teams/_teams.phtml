@@ -19,7 +19,7 @@
             }else{
                 echo "A team of " . $teamName;}?></h4>
                 
-            <a href="index.php?route=team">Découvrez <?= $teamName ?></a>
+            <a href="index.php?route=team&id=<?= $team->getId() ?>">Découvrez <?= $teamName ?></a>
         </div>
         <?php } ?>
 

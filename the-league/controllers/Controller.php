@@ -9,7 +9,7 @@ class Controller extends AbstractController
 
     public function match() : void
     {
-        $this->render("templates/match.phtml", []);
+        $this->render("templates/match.phtml", ["id" => (int)$_GET["id"]]);
     }
 
     public function matchs() : void
@@ -19,7 +19,7 @@ class Controller extends AbstractController
 
     public function player() : void
     {
-        $this->render("templates/player.phtml", []);
+        $this->render("templates/player.phtml", ["id" => (int)$_GET["id"]]);
     }
 
     public function players() : void
@@ -29,7 +29,7 @@ class Controller extends AbstractController
 
     public function team() : void
     {
-        $this->render("templates/team.phtml", []);
+        $this->render("templates/team.phtml", ["id" => (int)$_GET["id"]]);
     }
 
     public function teams() : void
