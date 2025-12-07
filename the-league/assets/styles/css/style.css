@@ -3,9 +3,8 @@ html {
     font-family: 'Roboto', sans-serif;
     background-color: #0b132b;
     color: white;
-    scroll-behavior: smooth;
 }
-
+ 
 body{
     margin: 0px;
 }
@@ -40,6 +39,15 @@ a {
     color: white;
 }
 
+.link_button{
+  border: solid 1px;
+  border-radius: 10px;
+}
+
+.border {
+  border: solid 1px #1c2541;
+}
+
 /*home page*/
 
 .title {
@@ -56,15 +64,17 @@ a {
     font-size: 2vw;
 }
 
-.border {
-  border: none;
-  padding: 0;
-  width: 100%;
-  max-width: 900px;
+.dailyTeam{
+  width: 90%;
+
   display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-  background-color: transparent;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  padding: 20px;
+
+  font-family: Ubuntu;
+  font-weight: bolder;
 }
 
 .dailyTeamLogo {
@@ -75,52 +85,37 @@ a {
 }
 
 .joueurs {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: baseline;
+  width: 60%;
 }
 
 .joueurs h4 {
   color: #d4b52f;
   font-size: 1.8rem;
   margin: 0 0 1rem 0;
-  font-weight: bold;
 }
 
 .joueurs > p {
-  color: white;
   font-size: 1rem;
   margin: 0 0 1.5rem 0;
 }
 
 .players-grid {
   display: flex;
-  gap: 2rem;
+  gap: 20%;
   flex-wrap: wrap;
-}
-
-.player-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
 }
 
 .player-card img {
   width: 150px;
-  height: 150px;
-  object-fit: cover;
   margin-bottom: 0.8rem;
-  border-radius: 0;
 }
 
 .player-card p {
   font-size: 0.95rem;
   color: #d97ab5;
-  margin: 0;
+  margin: 0px;
+  margin-left: 40px;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -141,4 +136,3 @@ a {
 .matchs h3 {
     font-size: 1.4vw;
 }
-

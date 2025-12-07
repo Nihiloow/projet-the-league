@@ -5,10 +5,10 @@
     <?php $team = $teamManager->findOne(1); ?>
     <?php $players = $playerManager->findAll(); ?>
 
-    <div class="border">
+    <div class="border dailyTeam">
         <img class="dailyTeamLogo" src="<?= $team->getLogo()->getUrl()?>" alt="<?= $team->getLogo()->getAlt()?>">
 
-        <div class="joueurs">
+        <div class="joueurs flex-column">
             <h4><?= $team->getName()?></h4>
             
             <p>Les players</p>
@@ -16,7 +16,7 @@
             <div class="players-grid">
                 <?php foreach ($players as $player) { ?>
                     <?php if ($player->getTeam()->getId() === $team->getId()) { ?>
-                        <div class="player-card">
+                        <div class="player-card flex_column">
                             <img src="<?= $player->getPortrait()->getUrl()?>" alt="<?= $player->getPortrait()->getAlt()?>">
                             <p><?= $player->getNickname()?></p>
                         </div>
