@@ -16,6 +16,12 @@ body{
     align-items: center;
 }
 
+.flex_column h3 {
+    color: #d4b52f;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
 .border{
     border: solid 1px #1c2541;
 }
@@ -41,7 +47,6 @@ a {
 .title {
     background-image: url(../../images/home_background_league.png);
     background-size: cover;
-    /*height: 300px;*/
     justify-content: space-around;
 }
 
@@ -53,9 +58,59 @@ a {
     font-size: 2vw;
 }
 
-#dailyTeamLogo{
+.dailyTeamLogo{
     width: 250px;
 }
+
+.border {
+  border: 2px solid #1c2541;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.dailyTeamLogo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.joueurs {
+  margin-top: 1rem;
+}
+
+
+.joueurs div {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.8rem;
+  background-color: #0b132b;
+  border-radius: 10px;
+  width: 120px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.joueurs div:hover {
+  transform: scale(1.05);
+  background-color: #3a506b;
+}
+
+.joueurs img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.joueurs div p {
+  font-size: 0.9rem;
+  color: #d97ab5;
+  margin: 0;
+}
+
+
+
 
 .LES_MATCHS {
     text-align: center;
