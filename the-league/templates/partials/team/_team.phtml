@@ -1,9 +1,9 @@
-<div>
+<div class = "team">
     <?php $teamName = $teamManager->findOne($data["id"])->getName(); ?>
     
     <h2><?= $teamName ?></h2>
 
-    <div>
+    <div class = "flex">
 
         <?php $players = $playerManager->findAll();
         foreach ($players as $player){
@@ -11,12 +11,7 @@
                 $playerName = $player->getNickname();
                 $imageInfo = $player->getPortrait();?>
 
-                <div>
-                    <img src="<?= $imageInfo->getUrl() ?>" alt="<?= $imageInfo->getAlt() ?>">
-                    <h3><?= $playerName ?></h3>
-                    <h4><?= $player->getTeam()->getName() ?></h4>
-                    <a href="index.php?route=player&id=<?= $player->getId() ?>">Découvrez <?= $playerName ?></a>
-                </div>
+                <?php require "templates/partials/_profil.phtml"; ?>
             <?php } ?>
         <?php } ?>
 

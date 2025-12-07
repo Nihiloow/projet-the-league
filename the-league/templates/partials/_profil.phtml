@@ -1,9 +1,7 @@
-<div>
+<div class = "player-card">
 
-    <img src="Lien" alt="Photo de profil ...">
-
-    <h5>Nom ...</h5>
-
-    <a href="Lien">DÉCOUVREZ ...</a>
+    <img src="<?= $imageInfo->getUrl() ?>" alt="<?= $imageInfo->getAlt() ?>">
+    <p><?= $playerName ?></p>
+    <a href="index.php?route=player&id=<?= $player->getId() ?>">Découvrez <?= $playerName ?></a>
 
 </div>
