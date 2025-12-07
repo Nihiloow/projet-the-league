@@ -6,9 +6,9 @@
     <?php $players = $playerManager->findAll(); ?>
 
     <div class="border">
-        <img id="dailyTeamLogo" src=<?= $team->getLogo()->getUrl()?> alt="<?= $team->getLogo()->getAlt()?>">
+        <img class="dailyTeamLogo" src=<?= $team->getLogo()->getUrl()?> alt="<?= $team->getLogo()->getAlt()?>">
 
-        <div>
+        <div class="joueurs">
 
             <h4><?= $team->getName()?></h4>
             
