@@ -3,17 +3,20 @@
     <h2>LES PERFORMANCES</h2>
 
     <div>
+        <div class="nom_categorie">
+            <h4>player</h4>
+            <h4>team</h4>
+            <h4>points</h4>
+            <h4>assists</h4>
+        </div>
     <?php $perfs = $player_perfManager->findPerf($data["id"]); ?>
 
     <?php foreach ($perfs as $perf) { ?>
-
         <div>
-
             <p><?=$perf["player"] ?></p>
             <p><?=$perf["team"] ?></p>
             <p><?=$perf["points"] ?></p>
             <p><?=$perf["assists"] ?></p>
-
         </div>
 
     <?php } ?>
