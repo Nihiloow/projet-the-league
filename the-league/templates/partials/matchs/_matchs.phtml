@@ -5,7 +5,7 @@
     <?php for ($i = 1; $i < 4; $i++) { ?>
         <?php $id_game = $i; ?>
         <?php require "templates/partials/_match.phtml"; ?>
-        <a href="lien de la page du match">DÉTAIL DU MATCH</a>
+        <a href="index.php?route=match&id=<?= $id_game ?>">DÉTAIL DU MATCH</a>
     <?php } ?>
 
 </section>
