@@ -1,11 +1,27 @@
-<div>
+<section>
 
-    <h3>SES PERFORMANCES</h3>
+    <h2>LES PERFORMANCES</h2>
 
     <div>
 
-        <?php // Faire remplir pour correspondre au CSS ?>
+    <?php // La personne qui fait le css dispose comme elle veut !
+    // Voici un exemple de ligne du tableau performance : ?>
 
+    <?php $perfs = $player_perfManager->findPerf($_GET()); ?>
+
+    <?php foreach ($perfs as $perf) { ?>
+
+        <div>
+
+            <p><?=$perf->getPlayer()->getNickname() ?></p>
+            <p><?=$perf->getTeam()->getName() ?></p>
+            <p><?=$perf->getPoints() ?></p>
+            <p><?=$perf->getAssists() ?></p>
+
+        </div>
+
+    <?php } ?>
+    
     </div>
 
-</div>
+</section>
