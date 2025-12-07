@@ -128,7 +128,7 @@ class Player_PerformanceManager extends AbstractManager
         foreach ($results as $result)
         {
             $teamLogo = new Media($result["teamLogoUrl"], $result["teamLogoAlt"], $result["teamLogoId"]);
-            $team = new Team($result["teamName"], null, $teamLogo, $result["t.id"]);
+            $team = new Team($result["teamName"], null, $teamLogo, null);
 
             $tab[] = [
                 "player" => $result["playerName"],
