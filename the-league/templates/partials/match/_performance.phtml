@@ -2,20 +2,26 @@
 
     <h2>LES PERFORMANCES</h2>
 
+    <div>
+
     <?php // La personne qui fait le css dispose comme elle veut !
     // Voici un exemple de ligne du tableau performance : ?>
 
-    <?php $game = $gameManager->findOne($_GET()); // à remplir avec le paramètre que renvoie la page matches ?>
-    <?php $perf = $player_perfManager->findAll(); ?>
+    <?php $perfs = $player_perfManager->findPerf($_GET()); ?>
 
-    <?php // if ($perf->getGame()->getId() === $game->getId() ) { ?>
+    <?php foreach ($perfs as $perf) { ?>
 
         <div>
 
-            <p><?php //?= ?></p>
+            <p><?=$perf->getPlayer()->getNickname() ?></p>
+            <p><?=$perf->getTeam()->getName() ?></p>
+            <p><?=$perf->getPoints() ?></p>
+            <p><?=$perf->getAssists() ?></p>
 
         </div>
 
-    <?php // } ?>
+    <?php } ?>
+    
+    </div>
 
 </section>

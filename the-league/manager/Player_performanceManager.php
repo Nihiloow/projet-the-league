@@ -99,4 +99,34 @@ class Player_PerformanceManager extends AbstractManager
 
         return $tab;
     }
+
+    public function findPerf(int $id): array
+    {
+        $query = $this->db->prepare("SELECT pp.id AS performanceId, pp.points, pp.assists, p.id AS playerId, p.nickname, p.bio, t.id AS playerTeamId, t.name AS playerTeamName, ml.id AS teamLogoId, ml.url AS teamLogoUrl, ml.alt AS teamLogoAlt, mp.id AS portraitId, mp.url AS portraitUrl, mp.alt AS portraitAlt, g.id AS gameId, g.name AS gameName, g.date AS gameDate, t1.id AS team1Id, t1.name AS team1Name, m1.id AS logo1Id, m1.url AS logo1Url, t2.id AS team2Id, t2.name AS team2Name, m2.id AS logo2Id, m2.url AS logo2Url, w.id AS winnerId, w.name AS winnerName, mw.id AS logoWId, mw.url AS logoWUrl FROM player_performance AS pp JOIN players AS p ON pp.player = p.id JOIN teams AS t ON p.team = t.id JOIN media AS ml ON t.logo = ml.id JOIN media AS mp ON p.portrait = mp.id JOIN games AS g ON pp.game = g.id JOIN teams AS t1 ON g.team_1 = t1.id JOIN media AS m1 ON t1.logo = m1.id JOIN teams AS t2 ON g.team_2 = t2.id JOIN media AS m2 ON t2.logo = m2.id JOIN teams AS w ON g.winner = w.id JOIN media AS mw ON w.logo = mw.id WHERE pp.game = :id;");
+        
+        $query->execute(["id" => $id]);
+        
+        $results = $query->fetchAll(\PDO::FETCH_ASSOC);
+        $tab = [];
+
+        foreach ($results as $result)
+        {
+            $teamLogo = new Media($result["teamLogoUrl"], $result["teamLogoAlt"], $result["teamLogoId"]);
+            $team = new Team($result["playerTeamName"], $result["playerTeamDesc"], $teamLogo, $result["playerTeamId"]);
+            $portrait = new Media($result["portraitUrl"], $result["portraitAlt"], $result["portraitId"]);
+            $player = new Player($result["nickname"], $result["bio"], $portrait, $team, $result["playerId"]);
+            
+            $logo1 = new Media($result["logo1Url"], "", $result["logo1Id"]);
+            $team1 = new Team($result["team1Name"], "", $logo1, $result["team1Id"]);
+            $logo2 = new Media($result["logo2Url"], "", $result["logo2Id"]);
+            $team2 = new Team($result["team2Name"], "", $logo2, $result["team2Id"]);
+            $logoW = new Media($result["logoWUrl"], "", $result["logoWId"]);
+            $winner = new Team($result["winnerName"], "", $logoW, $result["winnerId"]);
+            $game = new Game($result["gameName"], new DateTime($result["gameDate"]), $team1, $team2, $winner, $result["gameId"]);
+
+            $tab[] = new Player_Performance($player, $game, $result["points"], $result["assists"], $result["performanceId"]);
+        }
+
+        return $tab;
+    }
 }
