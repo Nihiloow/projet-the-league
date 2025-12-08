@@ -1,0 +1,42 @@
+.team h2 {
+    color: #d97ab5;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.team .player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.team .player-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border-radius: 0;
+}
+
+.team .player-card p {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #d97ab5;
+  margin: 0;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.team .player-card a {
+    width: 65%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}

@@ -4,42 +4,42 @@ class Controller extends AbstractController
 {
     public function home() : void
     {
-        $this->render("templates/home.phtml", []);
+        $this->render("home", []);
     }
 
     public function match() : void
     {
-        $this->render("templates/match.phtml", ["id" => (int)$_GET["id"]]);
+        $this->render("match", ["id" => (int)$_GET["id"]]);
     }
 
     public function matchs() : void
     {
-        $this->render("templates/matchs.phtml", []);
+        $this->render("matchs", []);
     }
 
     public function player() : void
     {
-        $this->render("templates/player.phtml", ["id" => (int)$_GET["id"]]);
+        $this->render("player", ["id" => (int)$_GET["id"]]);
     }
 
     public function players() : void
     {
-        $this->render("templates/players.phtml", []);
+        $this->render("players", []);
     }
 
     public function team() : void
     {
-        $this->render("templates/team.phtml", ["id" => (int)$_GET["id"]]);
+        $this->render("team", ["id" => (int)$_GET["id"]]);
     }
 
     public function teams() : void
     {
-        $this->render("templates/teams.phtml", []);
+        $this->render("teams", []);
     }
 
     public function missing() : void
     {
-        $this->render("templates/404.phtml", []);
+        $this->render("404", []);
     }
 }
 

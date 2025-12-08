@@ -1,0 +1,111 @@
+.title {
+    background-image: url(../../images/home_background_league.png);
+    background-size: cover;
+    justify-content: space-around;
+}
+
+.title h2 {
+    font-size: 4vw;
+}
+
+.title p{
+    font-size: 2vw;
+}
+
+.dailyTeam{
+  width: 90%;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  padding: 20px;
+
+  font-family: Ubuntu;
+  font-weight: bolder;
+}
+
+.dailyTeamLogo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.joueurs {
+  align-items: baseline;
+  width: 60%;
+}
+
+.joueurs h4 {
+  color: #d4b52f;
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+}
+
+.joueurs > p {
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.players-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.player-card img {
+  width: 150px;
+  margin-bottom: 0.8rem;
+}
+
+.player-card p {
+  font-size: 0.95rem;
+  color: #d97ab5;
+  margin: 0px;
+  margin-left: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.liste_joueur_une {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.joueur_une {
+    padding: 20px;
+    width: 300px;
+}
+
+.joueur_une img{
+  width: 100%;
+}
+
+.joueur_une h4{
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.joueur_une h5{
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.last_match div{
+  border: solid 1px #1c2541;
+}
+
+.matchs {
+    border: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+.matchs h3 {
+    font-size: 1.4vw;
+}

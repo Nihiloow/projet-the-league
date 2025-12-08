@@ -1,6 +1,6 @@
 <?php
 
-require "config/autoload.php";
+require "vendor/autoload.php";
 
 $gameManager = new GameManager() ;
 $mediaManager = new MediaManager() ;
